@@ -23,6 +23,7 @@ export default async function handler(req, res) {
       res.status(501).send(`Method ${method} not implemented`);
       console.log(`Method ${method} not implemented`);
   }
+
   async function postMethod() {
     const readFileData = await readFile(jsonFile);
     const todo = JSON.parse(readFileData);
@@ -44,6 +45,7 @@ export default async function handler(req, res) {
       console.log("POST api/todo status 200");
     }
   }
+  
   async function deleteMethod() {
     const readFileData = await readFile(jsonFile);
     const todo = JSON.parse(readFileData);
