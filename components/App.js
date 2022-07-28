@@ -1,21 +1,20 @@
 import InputArea from "./InputArea";
 import TodoContent from "./TodoContent";
-import { TodoHook } from "../Hooks/TodoHook";
+import { TodoProvider } from "../Contexts/TodoContext";
 import Header from "./Header";
 import { useState } from "react";
+
 const App = () => {
-  const { addData, todoData, deleteData, updateData } = TodoHook();
-  const [update, setUpdate] = useState(false);
+  // const { addData, todoData, deleteData, updateData } = TodoHook();
+  const [desc, setDesc] = useState("");
   return (
-    <div className="container">
-      <Header Update={update} />
-      <InputArea addData={addData} />
-      <TodoContent
-        todoData={todoData}
-        deleteData={deleteData}
-        updateData={updateData}
-      />
-    </div>
+    <TodoProvider>
+      <div className="container">
+        <Header />
+        <InputArea desc={desc} setDesc={setDesc} />
+        <TodoContent />
+      </div>
+    </TodoProvider>
   );
 };
 export default App;

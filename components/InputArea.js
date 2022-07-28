@@ -1,6 +1,7 @@
-import { useState } from "react";
-const InputArea = ({ addData }) => {
-  const [desc, setDesc] = useState("");
+import { useContext, useState } from "react";
+import { TodoContext } from "../Contexts/TodoContext";
+const InputArea = ({ desc, setDesc }) => {
+  const { addData } = useContext(TodoContext);
   return (
     <div className="input-area">
       <input
@@ -10,7 +11,12 @@ const InputArea = ({ addData }) => {
         id="input"
         onChange={(event) => setDesc(event.target.value)}
       />
-      <button className="input-btn" onClick={() => addData(desc)}>
+      <button
+        className="input-btn"
+        onClick={() => {
+          addData(desc);
+        }}
+      >
         Save
       </button>
     </div>

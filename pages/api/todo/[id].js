@@ -45,7 +45,7 @@ export default async function handler(req, res) {
       console.log("POST api/todo status 200");
     }
   }
-  
+
   async function deleteMethod() {
     const readFileData = await readFile(jsonFile);
     const todo = JSON.parse(readFileData);
@@ -60,5 +60,20 @@ export default async function handler(req, res) {
     res.setHeader("Content-Type", "application/json");
     res.status(200).send(JSON.stringify(todo, null, 2));
     console.log("DELETE api/todo status 200");
+  }
+  async function putMethod() {
+    const readFileData = await readFile(jsonFile);
+    const todo = JSON.parse(readFileData);
+    let data = todo.find((value) => {
+      return value.id == id;
+    });
+    data.Description = recordFromBody;
+    const newList = todo.map((value) => {
+      return value.id == id ? data : value;
+    });
+    writeFile(jsonFile, JSON.stringify(newList, null, 2));
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).send(JSON.stringify(todo, null, 2));
+    console.log("Update api/todo status 200");
   }
 }

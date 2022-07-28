@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import data from "../data.json";
 const apiRoot = "api/todo";
 function TodoHook() {
   const [todoData, setTodoData] = useState([]);
@@ -30,8 +29,9 @@ function TodoHook() {
     await axios.delete(`${apiRoot}/${id}`);
     await GetData();
   };
-  const updateData = async (id) => {
-    await axios.put(`${apiRoot}/${id}`);
+  const updateData = async (id, desc) => {
+    console.log(" asd is " + desc);
+    await axios.put(`${apiRoot}/${id}`, desc);
     await GetData();
   };
   return {
@@ -42,4 +42,4 @@ function TodoHook() {
   };
 }
 
-export { TodoHook };
+export default TodoHook;
