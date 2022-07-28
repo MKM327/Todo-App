@@ -29,9 +29,19 @@ function TodoHook() {
     await axios.delete(`${apiRoot}/${id}`);
     await GetData();
   };
-  const updateData = async (id, desc) => {
-    console.log(" asd is " + desc);
-    await axios.put(`${apiRoot}/${id}`, desc);
+  const updateData = async (id, description) => {
+    const options = {
+      url: `${apiRoot}/${id}`,
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: {
+        Description: description,
+      },
+    };
+    await axios(options);
     await GetData();
   };
   return {

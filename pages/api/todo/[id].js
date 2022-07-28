@@ -67,9 +67,12 @@ export default async function handler(req, res) {
     let data = todo.find((value) => {
       return value.id == id;
     });
-    data.Description = recordFromBody;
+    console.log(id);
+    const UpdatedData = { ...data, Description: recordFromBody.Description };
+    console.log(recordFromBody);
+    console.log(UpdatedData);
     const newList = todo.map((value) => {
-      return value.id == id ? data : value;
+      return value.id == id ? UpdatedData : value;
     });
     writeFile(jsonFile, JSON.stringify(newList, null, 2));
     res.setHeader("Content-Type", "application/json");

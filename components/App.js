@@ -8,7 +8,7 @@ const App = () => {
   // const { addData, todoData, deleteData, updateData } = TodoHook();
   const [desc, setDesc] = useState("");
   return (
-    <TodoProvider>
+    <TodoProvider desc= {desc}>
       <div className="container">
         <Header />
         <InputArea desc={desc} setDesc={setDesc} />
