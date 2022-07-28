@@ -1,13 +1,20 @@
 import InputArea from "./InputArea";
 import TodoContent from "./TodoContent";
 import { TodoHook } from "../Hooks/TodoHook";
+import Header from "./Header";
+import { useState } from "react";
 const App = () => {
-  const { addData, todoData, deleteData } = TodoHook();
+  const { addData, todoData, deleteData, updateData } = TodoHook();
+  const [update, setUpdate] = useState(false);
   return (
     <div className="container">
-      <h2 className="todo-header">Todo App</h2>
+      <Header Update={update} />
       <InputArea addData={addData} />
-      <TodoContent todoData={todoData} deleteData={deleteData} />
+      <TodoContent
+        todoData={todoData}
+        deleteData={deleteData}
+        updateData={updateData}
+      />
     </div>
   );
 };

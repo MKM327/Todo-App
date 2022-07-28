@@ -1,5 +1,5 @@
-const TodoItem = ({ todoData, deleteData, id }) => {
-  const { Description } = todoData;
+const TodoItem = ({ todoData, deleteData }) => {
+  const { Description, id } = todoData;
   return (
     <div className="todo-item">
       <span>{Description}</span>

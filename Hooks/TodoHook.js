@@ -30,10 +30,15 @@ function TodoHook() {
     await axios.delete(`${apiRoot}/${id}`);
     await GetData();
   };
+  const updateData = async (id) => {
+    await axios.put(`${apiRoot}/${id}`);
+    await GetData();
+  };
   return {
     addData,
     todoData,
     deleteData,
+    updateData,
   };
 }
 

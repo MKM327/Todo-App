@@ -5,7 +5,6 @@ const TodoContent = ({ todoData, deleteData }) => {
       <TodoItem
         todoData={value}
         key={value.id}
-        id={value.id}
         deleteData={deleteData}
       />
     );
