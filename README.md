@@ -1,1 +1,1 @@
-A To do app with reactjs and Next.js
+A To do app with react.js and Next.js
