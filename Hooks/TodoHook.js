@@ -11,7 +11,7 @@ function TodoHook() {
     const result = await axios.get(apiRoot);
     setTodoData(result.data);
   }
-  const addData = (description) => {
+  async function addData(description) {
     const options = {
       url: `${apiRoot}/99999`,
       method: "POST",
@@ -23,12 +23,12 @@ function TodoHook() {
         Description: description,
       },
     };
-    axios(options);
-    GetData();
-  };
-  const deleteData = (id) => {
-    axios.delete(`${apiRoot}/${id}`);
-    GetData();
+    await axios(options);
+    await GetData();
+  }
+  const deleteData = async (id) => {
+    await axios.delete(`${apiRoot}/${id}`);
+    await GetData();
   };
   return {
     addData,
