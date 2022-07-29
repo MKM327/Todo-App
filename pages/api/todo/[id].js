@@ -23,7 +23,13 @@ export default async function handler(req, res) {
       res.status(501).send(`Method ${method} not implemented`);
       console.log(`Method ${method} not implemented`);
   }
+  function getDate() {
+    var today = new Date();
+    const date = today.toLocaleDateString("en-US");
+    const time = today.toLocaleTimeString("en-US");
 
+    return ` Date: ${date} Time :${time}`;
+  }
   async function postMethod() {
     const readFileData = await readFile(jsonFile);
     const todo = JSON.parse(readFileData);
@@ -37,7 +43,7 @@ export default async function handler(req, res) {
           return idCurrent > accumulator ? idCurrent : accumulator;
         }, 0) + 1;
 
-      const newToDo = { ...recordFromBody, id: idNew };
+      const newToDo = { ...recordFromBody, id: idNew, date: getDate() };
       const newTodoList = [...todo, newToDo];
       writeFile(jsonFile, JSON.stringify(newTodoList, null, 2));
       res.setHeader("Content-Type", "application/json");
