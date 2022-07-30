@@ -42,7 +42,6 @@ export default async function handler(req, res) {
           const idCurrent = parseInt(currentValue.id);
           return idCurrent > accumulator ? idCurrent : accumulator;
         }, 0) + 1;
-      console.log(recordFromBody);
       const newToDo = { ...recordFromBody, id: idNew, date: getDate() };
       const newTodoList = [...todo, newToDo];
       writeFile(jsonFile, JSON.stringify(newTodoList, null, 2));
@@ -67,16 +66,18 @@ export default async function handler(req, res) {
     res.status(200).send(JSON.stringify(todo, null, 2));
     console.log("DELETE api/todo status 200");
   }
+
   async function putMethod() {
     const readFileData = await readFile(jsonFile);
     const todo = JSON.parse(readFileData);
     let data = todo.find((value) => {
       return value.id == id;
     });
-    console.log(id);
-    const UpdatedData = { ...data, Description: recordFromBody.Description };
-    console.log(recordFromBody);
-    console.log(UpdatedData);
+    const UpdatedData = {
+      ...data,
+      Header: recordFromBody.Header,
+      Description: recordFromBody.Description,
+    };
     const newList = todo.map((value) => {
       return value.id == id ? UpdatedData : value;
     });

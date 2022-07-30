@@ -13,7 +13,7 @@ function TodoHook() {
   }
   //Add the data from json
 
-  async function addData(header,description) {
+  async function addData(header, description) {
     const options = {
       url: `${apiRoot}/99999`,
       method: "POST",
@@ -22,14 +22,14 @@ function TodoHook() {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: {
-        Header:header,
+        Header: header,
         Description: description,
       },
     };
     await axios(options);
     await GetData();
   }
-  //Delete the data from json with the id 
+  //Delete the data from json with the id
 
   const deleteData = async (id) => {
     await axios.delete(`${apiRoot}/${id}`);
@@ -37,7 +37,7 @@ function TodoHook() {
   };
   //Update the data from json
 
-  const updateData = async (id, description) => {
+  const updateData = async ({ id, Header, Description }) => {
     const options = {
       url: `${apiRoot}/${id}`,
       method: "PUT",
@@ -46,7 +46,8 @@ function TodoHook() {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: {
-        Description: description,
+        Header: Header,
+        Description: Description,
       },
     };
     await axios(options);

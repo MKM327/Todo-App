@@ -3,7 +3,7 @@ const Theme = ({ setTheme }) => {
     <select
       name="select"
       id="todo-select"
-      class="todo-select"
+      className="todo-select"
       onChange={(event) => {
         setTheme(event.target.value);
       }}

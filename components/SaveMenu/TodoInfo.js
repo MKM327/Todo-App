@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { TodoContext } from "../../Contexts/TodoContext";
 
 const TodoInfo = () => {
-  const { setHeader, setDescription } = useContext(TodoContext);
-
+  const { header, description, setHeader, setDescription } =
+    useContext(TodoContext);
   return (
     <div>
       <div>
@@ -11,7 +11,7 @@ const TodoInfo = () => {
           name="input-header"
           type="text"
           class="input-text input-text-header"
-          placeholder="Header"
+          placeholder={header != "" ? header : "header"}
           onChange={(event) => setHeader(event.target.value)}
         />
       </div>
@@ -22,7 +22,7 @@ const TodoInfo = () => {
           cols=" 90"
           rows="7"
           class="input-text-desc"
-          placeholder="Description"
+          placeholder={description != undefined ? description : "description"}
           onChange={(event) => setDescription(event.target.value)}
         ></textarea>
       </div>
