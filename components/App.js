@@ -15,15 +15,12 @@ function AppNoProvider() {
       <div className="container">
         <Header />
         <button onClick={() => setMenuState()}>Add New Note</button>
-        {/* <InputArea desc={desc} setDesc={setDesc} /> */}
         <TodoContent />
       </div>
     </div>
   );
 }
 const App = () => {
-  // const { addData, todoData, deleteData, updateData } = TodoHook();
-
   return (
     <TodoProvider>
       <AppNoProvider />
