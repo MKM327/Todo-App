@@ -33,7 +33,7 @@ body {
     padding-left: 15px;
 }
 
-.container button {
+.wrapper button {
     border-radius: 20px;
     border: none;
     padding: 5px 20px;
@@ -48,7 +48,7 @@ body {
 
 }
 
-.container button:hover {
+.wrapper button:hover {
     background-color: white;
     color: black;
 }
@@ -99,9 +99,13 @@ body {
 
 }
 .wrapper-dark button{
+    border-radius: 20px;
+    border: none;
+    padding: 5px 20px;
     background-color: white;
-    outline: none;
     color: black;
+    transition: background-color 500ms, color 500ms;
+
 }
 .wrapper-dark select{
     background-color: white;

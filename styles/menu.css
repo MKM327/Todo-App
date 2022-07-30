@@ -1,0 +1,57 @@
+.input-text-header{
+    width: 50%;
+    margin-top:5px;
+}
+.input-text-desc{
+    margin-top: 5px;
+    border-radius: 10px;
+    resize: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 5px 0 0 5px;
+    outline: none;
+}
+.save-menu-btn{
+    position: absolute;
+    bottom: 0px;
+    right: 2px;
+}
+.save-menu-wrapper{
+    position: relative;
+}
+.menu-close{
+position: absolute;
+right: 1px;
+}
+
+.menu-close button{
+    background-color: white;
+    color: black;
+}
+.menu-close button:hover{
+    background-color: rgb(37,88,179);
+    color: white;  
+}
+.todo-save-menu{
+    visibility: hidden;
+    opacity:0;
+    position: absolute;
+    width: 55%;
+    height: max-content;
+    background-color: white;
+    border: solid 2px rgba(53, 53, 53, 0.514);
+    padding: 10px;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+.todo-save-menu.open{
+    visibility: visible;
+    transition: .5s all;
+    opacity: 1;
+
+}
+.todo-save-menu.closed{
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s all;
+
+
+}
