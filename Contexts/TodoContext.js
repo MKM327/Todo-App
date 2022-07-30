@@ -1,19 +1,31 @@
-import { Children, createContext } from "react";
-import Theme from "../components/Theme";
+import { createContext } from "react";
 import TodoHook from "../Hooks/TodoHook";
-import useTheme from "../Hooks/useTheme";
-
+import useMenu from "../Hooks/useMenu";
 const TodoContext = createContext();
-function TodoProvider({ children, desc }) {
+function TodoProvider({ children }) {
   const { addData, todoData, deleteData, updateData } = TodoHook();
+  const {
+    menuState,
+    setMenuState,
+    setHeader,
+    setDescription,
+    header,
+    description,
+  } = useMenu();
+
   return (
     <TodoContext.Provider
       value={{
-        desc,
+        setHeader,
+        setDescription,
         addData,
         todoData,
         deleteData,
         updateData,
+        menuState,
+        setMenuState,
+        header,
+        description,
       }}
     >
       {children}

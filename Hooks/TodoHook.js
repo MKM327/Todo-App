@@ -6,11 +6,14 @@ function TodoHook() {
   useEffect(() => {
     GetData();
   }, []);
+  //get the data from json
   async function GetData() {
     const result = await axios.get(apiRoot);
     setTodoData(result.data);
   }
-  async function addData(description) {
+  //Add the data from json
+
+  async function addData(header,description) {
     const options = {
       url: `${apiRoot}/99999`,
       method: "POST",
@@ -19,16 +22,21 @@ function TodoHook() {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: {
+        Header:header,
         Description: description,
       },
     };
     await axios(options);
     await GetData();
   }
+  //Delete the data from json with the id 
+
   const deleteData = async (id) => {
     await axios.delete(`${apiRoot}/${id}`);
     await GetData();
   };
+  //Update the data from json
+
   const updateData = async (id, description) => {
     const options = {
       url: `${apiRoot}/${id}`,
