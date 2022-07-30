@@ -37,7 +37,7 @@ function TodoHook() {
   };
   //Update the data from json
 
-  const updateData = async ({ id, Header, Description }) => {
+  const updateData = async (id, header, description) => {
     const options = {
       url: `${apiRoot}/${id}`,
       method: "PUT",
@@ -46,8 +46,8 @@ function TodoHook() {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: {
-        Header: Header,
-        Description: Description,
+        Header: header,
+        Description: description,
       },
     };
     await axios(options);

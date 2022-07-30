@@ -4,17 +4,9 @@ function useMenu() {
   const [menuState, setMenuState] = useState(false);
   const [header, setHeader] = useState("");
   const [description, setDescription] = useState("");
-  const [update, setUpdate] = useState(false);
-  const [currentItem, setCurrentItem] = useState({});
-  function openCloseMenu(todoItem = null) {
-    if (todoItem == null) {
-      setMenuState(!menuState);
-    } else {
-      setHeader(todoItem.Header);
-      setDescription(todoItem.Description);
-      setMenuState(!menuState);
-      setUpdate(true);
-    }
+  const [currentItem, setCurrentItem] = useState();
+  function openCloseMenu() {
+    setMenuState(!menuState);
   }
   return {
     header,
@@ -23,7 +15,6 @@ function useMenu() {
     setDescription,
     menuState,
     setMenuState: openCloseMenu,
-    update,
     currentItem,
     setCurrentItem,
   };

@@ -8,26 +8,29 @@ const SaveMenu = () => {
     addData,
     header,
     description,
-    update,
     updateData,
     currentItem,
+    setCurrentItem,
   } = useContext(TodoContext);
   return (
-    <div class={menuState ? "todo-save-menu open" : "todo-save-menu closed"}>
-      <div class="save-menu-wrapper">
-        <div class="menu-close">
+    <div
+      className={menuState ? "todo-save-menu open" : "todo-save-menu closed"}
+    >
+      <div className="save-menu-wrapper">
+        <div className="menu-close">
           <button onClick={() => setMenuState()}>X</button>
         </div>
         <TodoInfo />
         <div>
           <button
-            class="input-btn save-menu-btn"
+            className="input-btn save-menu-btn"
             onClick={() => {
-              if (!update) {
+              if (!currentItem) {
                 addData(header, description);
               } else {
-                console.log(currentItem);
-                updateData(currentItem);
+                updateData(currentItem.id, header, description);
+                setCurrentItem(undefined);
+                setMenuState();
               }
             }}
           >

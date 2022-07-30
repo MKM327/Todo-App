@@ -11,7 +11,6 @@ function TodoProvider({ children }) {
     setDescription,
     header,
     description,
-    update,
     currentItem,
     setCurrentItem,
   } = useMenu();
@@ -29,7 +28,6 @@ function TodoProvider({ children }) {
         setMenuState,
         header,
         description,
-        update,
         currentItem,
         setCurrentItem,
       }}
