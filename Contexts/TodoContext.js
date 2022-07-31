@@ -1,9 +1,11 @@
 import { createContext } from "react";
 import TodoHook from "../Hooks/TodoHook";
 import useMenu from "../Hooks/useMenu";
+import useTheme from "../Hooks/useTheme";
 const TodoContext = createContext();
 function TodoProvider({ children }) {
   const { addData, todoData, deleteData, updateData } = TodoHook();
+  const { theme, setTheme } = useTheme();
   const {
     menuState,
     setMenuState,
@@ -18,6 +20,8 @@ function TodoProvider({ children }) {
   return (
     <TodoContext.Provider
       value={{
+        theme,
+        setTheme,
         setHeader,
         setDescription,
         addData,

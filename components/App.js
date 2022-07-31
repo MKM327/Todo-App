@@ -6,8 +6,7 @@ import useTheme from "../Hooks/useTheme";
 import SaveMenu from "./SaveMenu/SaveMenu";
 import { useContext } from "react";
 function AppNoProvider() {
-  const { theme, setTheme } = useTheme();
-  const { setMenuState } = useContext(TodoContext);
+  const { setMenuState, theme, setTheme } = useContext(TodoContext);
   return (
     <div className={theme == "light" ? "wrapper" : "wrapper-dark"}>
       <Theme setTheme={setTheme} />

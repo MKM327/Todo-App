@@ -11,6 +11,11 @@
     border: solid 1px black;
     height: fit-content;
   }
+  .details-dark{
+    border: solid 1px white;
+    background-color: black;
+
+  }
   .details-open{
     visibility: visible;
     opacity: 1;
