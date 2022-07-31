@@ -48,19 +48,17 @@ align-items: center;
 .arrow-btn{
   background-color: white !important;
 }
-.right {
+.arrow.right {
   transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-transition:  .5 all;
-
-}
-
-.down {
+  transition:  .5s all;
+  
+  }
+  
+  .arrow.down {
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transition:  .5 all;
-
-}
+  transition:  .5s all;
+  
+  }
 .moved-down{
 position: absolute;
 top: 220px;
