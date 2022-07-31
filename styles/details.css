@@ -1,0 +1,68 @@
+.todo-details{
+       padding-left: 5px;
+       padding-right: 5px;
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    top: 28px;
+    text-align: start;
+    background-color: white;
+    z-index: 2;
+    border: solid 1px black;
+    height: fit-content;
+  }
+  .details-open{
+    visibility: visible;
+    opacity: 1;
+    transition: .5s all;
+
+  }
+  .details-closed{
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s all;
+
+  }
+.todo-details div{
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+}
+.todo-details h3{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.details-description{
+    width: 70%;
+    word-break: break-all;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transition:  .5 all;
+}
+
+.arrow-btn{
+  background-color: white !important;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+transition:  .5 all;
+
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition:  .5 all;
+
+}
+.moved-down{
+position: absolute;
+top: 220px;
+width: 100%;
+}

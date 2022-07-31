@@ -41,6 +41,7 @@ right: 1px;
     border: solid 2px rgba(53, 53, 53, 0.514);
     padding: 10px;
     transition: visibility 0s, opacity 0.5s linear;
+    z-index: 120;
 }
 .todo-save-menu.open{
     visibility: visible;

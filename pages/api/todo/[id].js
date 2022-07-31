@@ -42,7 +42,7 @@ export default async function handler(req, res) {
           const idCurrent = parseInt(currentValue.id);
           return idCurrent > accumulator ? idCurrent : accumulator;
         }, 0) + 1;
-      const newToDo = { ...recordFromBody, id: idNew, date: getDate() };
+      const newToDo = { ...recordFromBody, id: idNew, Date: getDate() };
       const newTodoList = [...todo, newToDo];
       writeFile(jsonFile, JSON.stringify(newTodoList, null, 2));
       res.setHeader("Content-Type", "application/json");
@@ -76,7 +76,7 @@ export default async function handler(req, res) {
     const updatedData = {
       ...data,
       ...recordFromBody,
-      date: getDate(),
+      Date: getDate(),
     };
     const newList = todo.map((value) => {
       return value.id == id ? updatedData : value;
