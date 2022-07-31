@@ -1,6 +1,7 @@
 import useDetails from "../../Hooks/useDetails";
 
-const Details = ({ header, description, Date, detailsState }) => {
+const Details = ({ todoItem, detailsState }) => {
+  const { Header, Date, Description } = todoItem;
   return (
     <div
       class={
@@ -10,12 +11,12 @@ const Details = ({ header, description, Date, detailsState }) => {
       }
     >
       <div>
-        <h3>{header}</h3>
+        <h3>{Header}</h3>
         <span>{Date}</span>
       </div>
 
       <div class="details-description">
-        <p>{description}</p>
+        <p>{Description}</p>
       </div>
     </div>
   );
