@@ -5,7 +5,7 @@ import Details from "./Details/Details";
 import OpenDetailsButton from "./Details/OpenDetailsButton";
 const TodoItem = ({ todoItem }) => {
   const { deleteData, setCurrentItem, setMenuState } = useContext(TodoContext);
-  const { Header, id, Date, Description } = todoItem;
+  const { Header, id, Date } = todoItem;
   const { detailsState, setDetailsState } = useDetails();
 
   return (
@@ -29,12 +29,7 @@ const TodoItem = ({ todoItem }) => {
           Update
         </button>
       </div>
-      <Details
-        header={Header}
-        description={Description}
-        Date={Date}
-        detailsState={detailsState}
-      />
+      <Details todoItem={todoItem} detailsState={detailsState} />
     </div>
   );
 };

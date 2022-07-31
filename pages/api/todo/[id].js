@@ -23,12 +23,15 @@ export default async function handler(req, res) {
       res.status(501).send(`Method ${method} not implemented`);
       console.log(`Method ${method} not implemented`);
   }
-  function getDate() {
+  function getDate(operation) {
     var today = new Date();
     const date = today.toLocaleDateString("en-US");
     const time = today.toLocaleTimeString("en-US");
 
-    return ` Date: ${date} Time :${time}`;
+    if (operation == "update") {
+      return ` Updated At: ${date} Time :${time}`;
+    }
+    return ` Created At: ${date} Time :${time}`;
   }
   async function postMethod() {
     const readFileData = await readFile(jsonFile);
@@ -76,7 +79,7 @@ export default async function handler(req, res) {
     const updatedData = {
       ...data,
       ...recordFromBody,
-      Date: getDate(),
+      Date: getDate("update"),
     };
     const newList = todo.map((value) => {
       return value.id == id ? updatedData : value;
