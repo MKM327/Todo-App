@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { TodoContext } from "../Contexts/TodoContext";
-import useDetails from "../Hooks/useDetails";
-import Details from "./Details/Details";
-import OpenDetailsButton from "./Details/OpenDetailsButton";
+import { TodoContext } from "../../Contexts/TodoContext";
+import useDetails from "../../Hooks/useDetails";
+import Details from "./../Details/Details";
+import OpenDetailsButton from "./../Details/OpenDetailsButton";
 const TodoItem = ({ todoItem }) => {
   const { deleteData, setCurrentItem, setMenuState } = useContext(TodoContext);
   const { Header, id, Date } = todoItem;

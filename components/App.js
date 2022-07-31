@@ -1,4 +1,4 @@
-import TodoContent from "./TodoContent";
+import TodoContent from "./To do items/TodoContent";
 import { TodoContext, TodoProvider } from "../Contexts/TodoContext";
 import Header from "./Header";
 import Theme from "./Theme";
