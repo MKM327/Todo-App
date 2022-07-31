@@ -4,10 +4,9 @@ import { TodoContext } from "../../Contexts/TodoContext";
 const Details = ({ todoItem, detailsState }) => {
   const { theme } = useContext(TodoContext);
   const { Header, Date, Description } = todoItem;
-  console.log(theme);
   return (
     <div
-      class={
+      className={
         theme == "light"
           ? detailsState
             ? "todo-details details-open"
@@ -22,7 +21,7 @@ const Details = ({ todoItem, detailsState }) => {
         <span>{Date}</span>
       </div>
 
-      <div class="details-description">
+      <div className="details-description">
         <p>{Description}</p>
       </div>
     </div>

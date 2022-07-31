@@ -12,13 +12,15 @@ const SaveTodoButton = () => {
     setMenuState,
   } = useContext(TodoContext);
   const ItemState = !currentItem;
+  let apiStatus;
   return (
     <div>
       <button
         className="input-btn save-menu-btn"
         onClick={() => {
           if (ItemState) {
-            addData(header, description);
+            apiStatus = addData(header, description);
+            console.log(apiStatus);
           } else {
             updateData(currentItem.id, header, description);
             setCurrentItem(undefined);
