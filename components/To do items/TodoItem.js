@@ -3,9 +3,25 @@ import { TodoContext } from "../../Contexts/TodoContext";
 import useDetails from "../../Hooks/useDetails";
 import Details from "./../Details/Details";
 import OpenDetailsButton from "./../Details/OpenDetailsButton";
-const TodoItem = ({ todoItem }) => {
+const ManageTodoButtons = ({ todoItem }) => {
   const { deleteData, setCurrentItem, setMenuState } = useContext(TodoContext);
-  const { Header, id, Date } = todoItem;
+  const { id } = todoItem;
+  return (
+    <div>
+      <button onClick={() => deleteData(id)}>Delete</button>
+      <button
+        onClick={() => {
+          setMenuState();
+          setCurrentItem(todoItem);
+        }}
+      >
+        Update
+      </button>
+    </div>
+  );
+};
+const TodoItem = ({ todoItem }) => {
+  const { Header, Date } = todoItem;
   const { detailsState, setDetailsState } = useDetails();
 
   return (
@@ -19,15 +35,7 @@ const TodoItem = ({ todoItem }) => {
       </div>
       <div>{Date}</div>
       <div>
-        <button onClick={() => deleteData(id)}>Delete</button>
-        <button
-          onClick={() => {
-            setMenuState();
-            setCurrentItem(todoItem);
-          }}
-        >
-          Update
-        </button>
+        <ManageTodoButtons todoItem={todoItem} />
       </div>
       <Details todoItem={todoItem} detailsState={detailsState} />
     </div>
