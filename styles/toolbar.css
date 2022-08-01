@@ -6,6 +6,15 @@
     transition: .5s all;
     align-items: center;
 }
+.toolbar button{
+    border-radius: 20px;
+    border: none;
+    padding: 5px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transition: background-color 500ms, color 500ms;
+
+}
 .todo-select{
     width: 10em;
     -webkit-appearance: none;
@@ -21,7 +30,7 @@
     outline: none;
 }
 .toolbar-search{
-    width: 40%;
+    width: 50%;
     height: 1.6rem;
 }
 .toolbar h3{
@@ -30,5 +39,10 @@
 }
 .t-dark{
     background-color: black;
-
+}
+.search-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }

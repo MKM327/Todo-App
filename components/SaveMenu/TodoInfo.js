@@ -4,7 +4,7 @@ import { TodoContext } from "../../Contexts/TodoContext";
 const TodoInfo = () => {
   const { setHeader, setDescription } = useContext(TodoContext);
   return (
-    <div>
+    <>
       <div>
         <input
           name="input-header"
@@ -25,7 +25,7 @@ const TodoInfo = () => {
           onChange={(event) => setDescription(event.target.value)}
         ></textarea>
       </div>
-    </div>
+    </>
   );
 };
 export default TodoInfo;
