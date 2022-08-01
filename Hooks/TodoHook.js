@@ -26,9 +26,8 @@ function TodoHook() {
         Description: description,
       },
     };
-    const returnData = await axios(options);
+    await axios(options);
     await GetData();
-    return returnData.status;
   }
   //Delete the data from json with the id
 

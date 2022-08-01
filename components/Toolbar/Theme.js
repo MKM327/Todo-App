@@ -1,4 +1,8 @@
-const Theme = ({ setTheme }) => {
+import { useContext } from "react";
+import { TodoContext } from "../../Contexts/TodoContext";
+
+const Theme = () => {
+  const { setTheme } = useContext(TodoContext);
   return (
     <select
       name="select"

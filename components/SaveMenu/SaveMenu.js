@@ -19,8 +19,7 @@ const SaveTodoButton = () => {
         className="input-btn save-menu-btn"
         onClick={() => {
           if (ItemState) {
-            apiStatus = addData(header, description);
-            console.log(apiStatus);
+            addData(header, description);
           } else {
             updateData(currentItem.id, header, description);
             setCurrentItem(undefined);
