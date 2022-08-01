@@ -5,7 +5,7 @@ import { useContext } from "react";
 import Toolbar from "./Toolbar/Toolbar";
 import { SearchProvider } from "../Contexts/SearchContext";
 function AppNoProvider() {
-  const { setMenuState, theme } = useContext(TodoContext);
+  const {  theme } = useContext(TodoContext);
 
   return (
     <>
@@ -13,7 +13,7 @@ function AppNoProvider() {
       <div className={theme == "light" ? "wrapper" : "wrapper-dark"}>
         <SaveMenu />
         <div className="container">
-          <button onClick={() => setMenuState()}>Add New Note</button>
+
           <TodoContent />
         </div>
       </div>
