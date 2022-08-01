@@ -1,4 +1,4 @@
-const Search = ({ setSearchValue }) => {
+const Search = ({ setSearchValue, setSearched }) => {
   return (
     <div className="search-area">
       <input
@@ -9,7 +9,13 @@ const Search = ({ setSearchValue }) => {
         placeholder="Search"
         onChange={(event) => setSearchValue(event.target.value)}
       />
-      <button>Save</button>
+      <button
+        onClick={() => {
+          setSearched(true);
+        }}
+      >
+        Search
+      </button>
     </div>
   );
 };
