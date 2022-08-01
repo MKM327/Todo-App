@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { SearchContext } from "../../Contexts/SearchContext";
+
 const Search = ({ setSearchValue, setSearched }) => {
+  const { setSearchValue, setSearched } = useContext(SearchContext);
   return (
     <div className="search-area">
       <input
