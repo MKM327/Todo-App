@@ -20,6 +20,7 @@ const SaveTodoButton = () => {
         onClick={() => {
           if (ItemState) {
             addData(header, description);
+            setMenuState();
           } else {
             updateData(currentItem.id, header, description);
             setCurrentItem(undefined);
