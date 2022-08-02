@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-const apiRoot = "api/todo";
+const apiRoot = "http://localhost:3000/api/todo";
 function useTodo() {
   const [todoData, setTodoData] = useState([]);
   useEffect(() => {
-    GetData();
+    async function GetNoteData() {
+      await GetData();
+    }
+    GetNoteData();
   }, []);
   //get the data from json
   async function GetData() {
@@ -12,7 +15,12 @@ function useTodo() {
     setTodoData(result.data);
   }
   //Add the data from json
-
+  function getDataWithId(id) {
+    const dataValue = todoData.find((value) => {
+      return value.id == id;
+    });
+    return dataValue;
+  }
   async function addData(header, description) {
     const options = {
       url: `${apiRoot}/99999`,
@@ -58,6 +66,7 @@ function useTodo() {
     todoData,
     deleteData,
     updateData,
+    getDataWithId,
   };
 }
 
