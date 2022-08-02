@@ -5,5 +5,8 @@ export default function TodoPage() {
   const { getDataWithId } = useTodo();
   const id = parseInt(router.query.id);
   const data = getDataWithId(id);
-  return <div></div>;
+  if (data == undefined) {
+    return;
+  }
+  return <div>{data.Header}</div>;
 }

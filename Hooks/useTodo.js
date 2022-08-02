@@ -4,10 +4,7 @@ const apiRoot = "http://localhost:3000/api/todo";
 function useTodo() {
   const [todoData, setTodoData] = useState([]);
   useEffect(() => {
-    async function GetNoteData() {
-      await GetData();
-    }
-    GetNoteData();
+    GetData();
   }, []);
   //get the data from json
   async function GetData() {
@@ -16,10 +13,10 @@ function useTodo() {
   }
   //Add the data from json
   function getDataWithId(id) {
-    const dataValue = todoData.find((value) => {
-      return value.id == id;
+    console.log(todoData);
+    return todoData.find((data) => {
+      return data.id == id;
     });
-    return dataValue;
   }
   async function addData(header, description) {
     const options = {
