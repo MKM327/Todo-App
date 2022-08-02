@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 const apiRoot = "api/todo";
-function TodoHook() {
+function useTodo() {
   const [todoData, setTodoData] = useState([]);
   useEffect(() => {
     GetData();
@@ -61,4 +61,4 @@ function TodoHook() {
   };
 }
 
-export default TodoHook;
+export default useTodo;

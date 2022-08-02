@@ -3,11 +3,10 @@ import useSearch from "../Hooks/useSearch";
 
 const SearchContext = createContext();
 const SearchProvider = ({ children }) => {
-  const { setSearchValue, getSearchResult, searched, setSearched } =
-    useSearch();
+  const { searchValue, setSearchValue, getSearchResult } = useSearch();
   return (
     <SearchContext.Provider
-      value={{ setSearchValue, getSearchResult, searched, setSearched }}
+      value={{ searchValue, setSearchValue, getSearchResult }}
     >
       {children}
     </SearchContext.Provider>

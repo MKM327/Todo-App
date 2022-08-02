@@ -1,5 +1,5 @@
 import path from "path";
-import fs, { read } from "fs";
+import fs from "fs";
 
 const { promisify } = require("util");
 const readFile = promisify(fs.readFile);
