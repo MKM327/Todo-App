@@ -4,7 +4,7 @@ const useSearch = () => {
   const [searchValue, setSearchValue] = useState("");
   function getSearchResult(todoData) {
     return todoData.filter((value) => {
-      return value.Header.toLowerCase().includes(searchValue.toLowerCase());
+      return value.Header.toLowerCase().startsWith(searchValue.toLowerCase());
     });
   }
   return {

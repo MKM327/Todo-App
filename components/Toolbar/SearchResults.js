@@ -6,7 +6,7 @@ const SearchResults = () => {
   const { todoData } = useContext(TodoContext);
   const { searchValue, getSearchResult } = useContext(SearchContext);
   const SearchedData = getSearchResult(todoData);
-  console.log(searchValue);
+
   return (
     <div
       class={
