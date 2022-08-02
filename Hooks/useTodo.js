@@ -13,7 +13,6 @@ function useTodo() {
   }
   //Add the data from json
   function getDataWithId(id) {
-    console.log(todoData);
     return todoData.find((data) => {
       return data.id == id;
     });

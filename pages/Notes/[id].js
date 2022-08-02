@@ -6,7 +6,15 @@ export default function TodoPage() {
   const id = parseInt(router.query.id);
   const data = getDataWithId(id);
   if (data == undefined) {
-    return;
+    return (
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
+  } else {
+    return <div>{data.Header}</div>;
   }
-  return <div>{data.Header}</div>;
 }
