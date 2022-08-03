@@ -81,3 +81,6 @@
     visibility: hidden;
     opacity: 0;   
 }
+.toolbar-header{
+    cursor: pointer;
+}
