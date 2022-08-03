@@ -33,4 +33,44 @@
       transform: rotate(360deg);
     }
   }
-  
+  html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+.note-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.note-header{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+
+    align-items: center;
+}
+.note-wrapper{
+    width: 50%;
+    position: relative;
+}
+.note-header span,h4{
+    margin: 5px;
+}
+
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top:10px;
+    gap: 5px;
+}
+.todo-wrapper{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top:5px;
+    padding: 5px;
+}

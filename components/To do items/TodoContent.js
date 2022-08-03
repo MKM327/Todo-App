@@ -12,7 +12,7 @@ const ButtonRow = () => {
 };
 const TodoContent = () => {
   const { todoData } = useContext(TodoContext);
-  const { getSearchResult, setSearched, searched } = useContext(SearchContext);
+  const { getSearchResult, searched } = useContext(SearchContext);
 
   if (!searched) {
     return (

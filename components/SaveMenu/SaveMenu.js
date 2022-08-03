@@ -12,7 +12,6 @@ const SaveTodoButton = () => {
     setMenuState,
   } = useContext(TodoContext);
   const ItemState = !currentItem;
-  let apiStatus;
   return (
     <div>
       <button

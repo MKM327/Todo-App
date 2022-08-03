@@ -35,7 +35,7 @@ body {
     padding-left: 15px;
 }
 
-.wrapper button {
+button {
     border-radius: 20px;
     border: none;
     padding: 5px 20px;
@@ -50,7 +50,7 @@ body {
 
 }
 
-.wrapper button:hover {
+button:hover {
     background-color: white;
     color: black;
 }

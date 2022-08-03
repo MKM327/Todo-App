@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import NotePage from "../../components/Note/NotePage";
 import useTodo from "../../Hooks/useTodo";
 export default function TodoPage() {
   const router = useRouter();
@@ -7,7 +8,7 @@ export default function TodoPage() {
   const data = getDataWithId(id);
   if (data == undefined) {
     return (
-      <div class="lds-ring">
+      <div className="lds-ring">
         <div></div>
         <div></div>
         <div></div>
@@ -15,6 +16,6 @@ export default function TodoPage() {
       </div>
     );
   } else {
-    return <div>{data.Header}</div>;
+    return <NotePage data= {data} />;
   }
 }
