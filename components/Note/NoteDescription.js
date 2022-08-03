@@ -1,4 +1,7 @@
-const NoteDescription = ({ data }) => {
+import { useContext } from "react";
+import { MenuContext } from "../../Contexts/MenuContext";
+const NoteDescription = () => {
+  const { data } = useContext(MenuContext);
   return (
     <>
       <div className="note-header">

@@ -1,22 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function useMenu() {
-  const [menuState, setMenuState] = useState(false);
-  const [header, setHeader] = useState("");
-  const [description, setDescription] = useState("");
-  const [currentItem, setCurrentItem] = useState();
+  const [menuState, setMenuState] = useState("closed");
   function openCloseMenu() {
-    setMenuState(!menuState);
+    console.log(menuState);
+    if (menuState === "closed") {
+      setMenuState("open");
+    } else {
+      setMenuState("closed");
+    }
   }
   return {
-    header,
-    setHeader,
-    description,
-    setDescription,
     menuState,
     setMenuState: openCloseMenu,
-    currentItem,
-    setCurrentItem,
   };
 }
 export default useMenu;

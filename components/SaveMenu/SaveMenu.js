@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { TodoContext } from "../../Contexts/TodoContext";
 import TodoInfo from "./TodoInfo";
-const SaveTodoButton = ({ data }) => {
+import { MenuContext } from "../../Contexts/MenuContext";
+import { TodoContext } from "../../Contexts/TodoContext";
+const SaveTodoButton = () => {
+  const { data } = useContext(MenuContext);
   const { id } = data;
   const { updateData, header, description } = useContext(TodoContext);
   return (
@@ -17,12 +19,14 @@ const SaveTodoButton = ({ data }) => {
     </div>
   );
 };
-const MenuCloseButton = ({ setMenu }) => {
+const MenuCloseButton = () => {
+  const { setMenuState } = useContext(MenuContext);
+
   return (
     <div className="menu-close">
       <button
         onClick={() => {
-          setMenu("closed");
+          setMenuState("closed");
         }}
       >
         X
@@ -30,17 +34,14 @@ const MenuCloseButton = ({ setMenu }) => {
     </div>
   );
 };
-const SaveMenu = ({ menu, setMenu, data }) => {
+const SaveMenu = () => {
+  const { menuState } = useContext(MenuContext);
   return (
-    <div
-      className={
-        menu == "open" ? "todo-save-menu open" : "todo-save-menu closed"
-      }
-    >
+    <div className={`todo-save-menu ${menuState}`}>
       <div className="save-menu-wrapper">
-        <MenuCloseButton setMenu={setMenu} />
+        <MenuCloseButton />
         <TodoInfo />
-        <SaveTodoButton data={data} />
+        <SaveTodoButton />
       </div>
     </div>
   );
