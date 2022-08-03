@@ -32,10 +32,9 @@ right: 1px;
     color: white;  
 }
 .todo-save-menu{
-    visibility: hidden;
-    opacity:0;
+
     position: absolute;
-    width: 55%;
+    width: 105%;
     height: max-content;
     background-color: white;
     border: solid 2px rgba(53, 53, 53, 0.514);

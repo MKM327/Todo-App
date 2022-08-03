@@ -7,8 +7,8 @@ const NoteDescription = ({ data }) => {
       </div>
       <p>{data.Description}</p>
       <div>
-        <input type="checkbox" name="isDone" id="" className="note-checkbox" checked={data.Finished} />
-        <label for="isDone">Mark as Finished</label>
+        <input type="checkbox" name="isDone" id="" className="note-checkbox" />
+        <label htmlFor="isDone">Mark as Finished</label>
       </div>
     </>
   );
