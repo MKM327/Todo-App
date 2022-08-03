@@ -1,8 +1,9 @@
 import { useContext } from "react";
+import { MenuContext } from "../../Contexts/MenuContext";
 import { TodoContext } from "../../Contexts/TodoContext";
 
 const TodoInfo = () => {
-  const { setHeader, setDescription } = useContext(TodoContext);
+  const { setHeader, setDescription } = useContext(MenuContext);
   return (
     <>
       <div>

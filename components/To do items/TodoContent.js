@@ -12,27 +12,14 @@ const ButtonRow = () => {
 };
 const TodoContent = () => {
   const { todoData } = useContext(TodoContext);
-  const { getSearchResult, searched } = useContext(SearchContext);
 
-  if (!searched) {
-    return (
-      <div>
-        <ButtonRow />
-        {todoData.map((value) => {
-          return <TodoItem todoItem={value} key={value.id} />;
-        })}
-      </div>
-    );
-  } else {
-    const searchedList = getSearchResult(todoData);
-    return (
-      <div>
-        <ButtonRow />
-        {searchedList.map((value) => {
-          return <TodoItem todoItem={value} key={value.id} />;
-        })}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <ButtonRow />
+      {todoData.map((value) => {
+        return <TodoItem todoItem={value} key={value.id} />;
+      })}
+    </div>
+  );
 };
 export default TodoContent;

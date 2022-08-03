@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import NotePage from "../../components/Note/NotePage";
 import useTodo from "../../Hooks/useTodo";
 export default function TodoPage() {
+  debugger;
   const router = useRouter();
   const { getDataWithId } = useTodo();
   const id = parseInt(router.query.id);
@@ -16,6 +17,6 @@ export default function TodoPage() {
       </div>
     );
   } else {
-    return <NotePage data= {data} />;
+    return <NotePage data={data} />;
   }
 }

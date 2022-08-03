@@ -11,7 +11,7 @@ const NotePage = ({ data }) => {
       <div className="note-container">
         <div className="note-wrapper">
           <SaveMenu />
-          <NoteButtons  />
+          <NoteButtons />
           <div className="todo-wrapper">
             <NoteDescription />
             <div></div>

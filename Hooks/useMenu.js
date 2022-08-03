@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function useMenu() {
   const [menuState, setMenuState] = useState("closed");
+  const [header, setHeader] = useState("");
+  const [description, setDescription] = useState("");
   function openCloseMenu() {
     console.log(menuState);
     if (menuState === "closed") {
@@ -11,6 +13,10 @@ function useMenu() {
     }
   }
   return {
+    header,
+    setHeader,
+    description,
+    setDescription,
     menuState,
     setMenuState: openCloseMenu,
   };

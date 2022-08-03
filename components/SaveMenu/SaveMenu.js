@@ -4,14 +4,13 @@ import { MenuContext } from "../../Contexts/MenuContext";
 import { TodoContext } from "../../Contexts/TodoContext";
 const SaveTodoButton = () => {
   const { data } = useContext(MenuContext);
-  const { id } = data;
   const { updateData, header, description } = useContext(TodoContext);
   return (
     <div>
       <button
         className="input-btn save-menu-btn"
         onClick={() => {
-          updateData(id, header, description);
+          updateData(data.id, header, description);
         }}
       >
         Update

@@ -11,7 +11,6 @@ function AppNoProvider() {
     <>
       <Toolbar />
       <div className={theme == "light" ? "wrapper" : "wrapper-dark"}>
-        <SaveMenu />
         <div className="container">
           <TodoContent />
         </div>
@@ -20,12 +19,6 @@ function AppNoProvider() {
   );
 }
 const App = () => {
-  return (
-    <SearchProvider>
-      <TodoProvider>
-        <AppNoProvider />
-      </TodoProvider>
-    </SearchProvider>
-  );
+  return <AppNoProvider />;
 };
 export default App;
