@@ -1,23 +1,24 @@
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { TodoContext } from "../Contexts/TodoContext";
-const useNote = () => {
-  const { todoData } = useContext(TodoContext);
-  const [data, setData] = useState({});
+const useNote = (data) => {
+  const [filteredData, setFilteredData] = useState({});
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   let id = parseInt(router.query.id);
-  function FilterData(id) {
-    const filteredData = todoData.find((data) => data.id == id);
-    setData(filteredData);
+  function filterData() {
+    debugger;
+    const filteredData = data.find((data) => data.id == id);
+    setFilteredData(filteredData);
   }
   useEffect(() => {
-    if (todoData.Length == 0) {
+    if (Object.keys(filteredData).length === 0) {
       setLoading(true);
-      FilterData(id);
+    } else {
+      setLoading(false);
     }
-    FilterData(id);
-  }, [id, todoData]);
-  return { data, loading };
+    filterData();
+  }, [id, filteredData]);
+  return { filteredData, loading, filterData };
 };
 export default useNote;

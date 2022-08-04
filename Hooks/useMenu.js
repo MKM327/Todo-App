@@ -5,7 +5,6 @@ function useMenu() {
   const [header, setHeader] = useState("");
   const [description, setDescription] = useState("");
   function openCloseMenu() {
-    console.log(menuState);
     if (menuState === "closed") {
       setMenuState("open");
     } else {

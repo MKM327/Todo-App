@@ -8,12 +8,12 @@ import { TodoProvider } from "../Contexts/TodoContext";
 import { MenuProvider } from "../Contexts/MenuContext";
 export default function MyApp({ Component, pageProps }) {
   return (
-    <MenuProvider>
+
       <SearchProvider>
         <TodoProvider>
           <Component {...pageProps} />
         </TodoProvider>
       </SearchProvider>
-    </MenuProvider>
+
   );
 }

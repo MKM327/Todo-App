@@ -1,26 +1,31 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SaveMenu from "../SaveMenu/SaveMenu";
 import Toolbar from "../Toolbar/Toolbar";
 import NoteButtons from "./NoteButtons";
 import NoteDescription from "./NoteDescription";
 import { MenuProvider } from "../../Contexts/MenuContext";
 import useNote from "../../Hooks/useNote";
-const NotePage = () => {
-  const { data, loading } = useNote();
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
+import axios from "axios";
+const NotePage = ({ data }) => {
+  const { filteredData, loading, filterData } = useNote(data);
   return (
-    <MenuProvider data={data}>
+    <MenuProvider data={filteredData} filterData={filterData}>
       <Toolbar />
       <div className="note-container">
         <div className="note-wrapper">
           <SaveMenu />
           <NoteButtons />
           <div className="todo-wrapper">
-            <NoteDescription data={data} />
-            <div></div>
+            {loading ? (
+              <div className="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            ) : (
+              <NoteDescription data={filteredData} />
+            )}
           </div>
         </div>
       </div>

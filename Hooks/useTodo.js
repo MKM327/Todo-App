@@ -10,9 +10,7 @@ function useTodo() {
   //get the data from json
   async function GetData() {
     const result = await axios.get(apiRoot);
-    console.log(result.data);
     setTodoData(result.data);
-    console.log(todoData);
   }
   //Add the data from json
   async function addData(header, description) {
