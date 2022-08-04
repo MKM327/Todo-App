@@ -6,17 +6,15 @@ function useTodo() {
   useEffect(() => {
     GetData();
   }, []);
+
   //get the data from json
   async function GetData() {
     const result = await axios.get(apiRoot);
+    console.log(result.data);
     setTodoData(result.data);
+    console.log(todoData);
   }
   //Add the data from json
-  function getDataWithId(id) {
-    return todoData.find((data) => {
-      return data.id == id;
-    });
-  }
   async function addData(header, description) {
     const options = {
       url: `${apiRoot}/99999`,
@@ -62,7 +60,6 @@ function useTodo() {
     todoData,
     deleteData,
     updateData,
-    getDataWithId,
   };
 }
 
