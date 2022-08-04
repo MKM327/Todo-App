@@ -7,7 +7,6 @@ const useNote = (data) => {
   const router = useRouter();
   let id = parseInt(router.query.id);
   function filterData() {
-    debugger;
     const filteredData = data.find((data) => data.id == id);
     setFilteredData(filteredData);
   }
