@@ -1,13 +1,25 @@
+import Link from "next/link";
 import { useContext } from "react";
 import { MenuContext } from "../../Contexts/MenuContext";
-const NoteButtons = () => {
+import { TodoContext } from "../../Contexts/TodoContext";
+const NoteButtons = ({ filteredData }) => {
   const { setMenuState } = useContext(MenuContext);
+  const { deleteData } = useContext(TodoContext);
   return (
     <div className="button-wrapper">
       <button className="edit-btn" onClick={() => setMenuState()}>
         Edit
       </button>
-      <button className="edit-btn">Delete</button>
+      <Link href={"/"}>
+        <button
+          className="edit-btn"
+          onClick={() => {
+            deleteData(filteredData.id);
+          }}
+        >
+          Delete
+        </button>
+      </Link>
     </div>
   );
 };
