@@ -9,6 +9,7 @@
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     padding: 5px 0 0 5px;
     outline: none;
+    width: 80%;
 }
 .save-menu-btn{
     position: absolute;
@@ -34,7 +35,7 @@ right: 1px;
 .todo-save-menu{
 
     position: absolute;
-    width: 105%;
+    width: 100%;
     height: max-content;
     background-color: white;
     border: solid 2px rgba(53, 53, 53, 0.514);

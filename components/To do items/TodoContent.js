@@ -1,12 +1,19 @@
 import { useContext } from "react";
-import { SearchContext } from "../../Contexts/SearchContext";
 import { TodoContext } from "../../Contexts/TodoContext";
 import TodoItem from "./TodoItem";
+import { MenuContext } from "../../Contexts/MenuContext";
 const ButtonRow = () => {
-  const { setMenuState } = useContext(TodoContext);
+  const { setMenuState, setMenuMode } = useContext(MenuContext);
   return (
     <div className="button-row">
-      <button onClick={() => setMenuState()}>Add New Note</button>
+      <button
+        onClick={() => {
+          setMenuState();
+          setMenuMode("add");
+        }}
+      >
+        Add New Note
+      </button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import useMenu from "../Hooks/useMenu";
 const MenuContext = createContext();
-const MenuProvider = ({ children, data, filterData }) => {
+const MenuProvider = ({ children, data }) => {
   const {
     menuState,
     setMenuState,
@@ -9,6 +9,8 @@ const MenuProvider = ({ children, data, filterData }) => {
     setDescription,
     description,
     header,
+    menuMode,
+    setMenuMode,
   } = useMenu();
   return (
     <MenuContext.Provider
@@ -20,7 +22,8 @@ const MenuProvider = ({ children, data, filterData }) => {
         setDescription,
         header,
         description,
-        filterData,
+        menuMode,
+        setMenuMode,
       }}
     >
       {children}

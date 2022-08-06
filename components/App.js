@@ -1,17 +1,16 @@
 import TodoContent from "./To do items/TodoContent";
-import { TodoContext, TodoProvider } from "../Contexts/TodoContext";
-import SaveMenu from "./SaveMenu/SaveMenu";
+import { TodoContext } from "../Contexts/TodoContext";
 import { useContext } from "react";
 import Toolbar from "./Toolbar/Toolbar";
-import { SearchProvider } from "../Contexts/SearchContext";
+import SaveMenu from "../components/SaveMenu/SaveMenu";
 function AppNoProvider() {
   const { theme } = useContext(TodoContext);
-
   return (
     <>
       <Toolbar />
       <div className={theme == "light" ? "wrapper" : "wrapper-dark"}>
         <div className="container">
+          <SaveMenu />
           <TodoContent />
         </div>
       </div>
