@@ -24,8 +24,9 @@ const TodoContent = () => {
     <div>
       <ButtonRow />
       <h2>Recent Notes</h2>
-      {todoData.map((value) => {
-        return <TodoItem todoItem={value} key={value.id} />;
+
+      {todoData.slice(0, 3).map((todoItem) => {
+        return <TodoItem todoItem={todoItem} />;
       })}
     </div>
   );
