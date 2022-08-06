@@ -10,6 +10,9 @@ const Toolbar = () => {
       <Link href={"/"}>
         <h3 className="toolbar-header">To do App</h3>
       </Link>
+      {/* <Link href={"Notes"}>
+        <h3>All Notes</h3>
+      </Link> */}
       <Search />
       <Theme />
     </div>

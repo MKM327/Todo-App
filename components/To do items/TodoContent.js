@@ -18,8 +18,7 @@ const ButtonRow = () => {
   );
 };
 const TodoContent = () => {
-  const { todoData, getMostRecentData } = useContext(TodoContext);
-  console.log(getMostRecentData());
+  const { todoData } = useContext(TodoContext);
   return (
     <div>
       <ButtonRow />

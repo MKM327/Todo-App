@@ -6,10 +6,6 @@ function useTodo() {
   useEffect(() => {
     GetData();
   }, []);
-  function getMostRecentData() {
-    
-  }
-
   //get the data from json
   async function GetData() {
     const result = await axios.get(apiRoot);
@@ -40,7 +36,8 @@ function useTodo() {
   };
   //Update the data from json
 
-  const updateData = async (id, header, description) => {
+  const updateData = async (id, header, description, finished) => {
+    console.log(finished);
     const options = {
       url: `${apiRoot}/${id}`,
       method: "PUT",
@@ -51,6 +48,7 @@ function useTodo() {
       data: {
         Header: header,
         Description: description,
+        Finished: finished,
       },
     };
     await axios(options);
@@ -61,7 +59,6 @@ function useTodo() {
     todoData,
     deleteData,
     updateData,
-    getMostRecentData,
   };
 }
 

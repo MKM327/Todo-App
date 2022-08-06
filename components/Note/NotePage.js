@@ -9,7 +9,7 @@ import axios from "axios";
 import TodoContent from "../To do items/TodoContent";
 import { TodoContext } from "../../Contexts/TodoContext";
 const NotePage = ({ data }) => {
-  const { filteredData, loading } = useNote(data);
+  const { filteredData, loading, finished, setFinished } = useNote(data);
   const { theme } = useContext(TodoContext);
   return (
     <MenuProvider data={filteredData}>
@@ -27,7 +27,11 @@ const NotePage = ({ data }) => {
                 <div></div>
               </div>
             ) : (
-              <NoteDescription data={filteredData} />
+              <NoteDescription
+                data={filteredData}
+                finished={finished}
+                setFinished={setFinished}
+              />
             )}
           </div>
         </div>
@@ -36,3 +40,9 @@ const NotePage = ({ data }) => {
   );
 };
 export default NotePage;
+class Customer {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
