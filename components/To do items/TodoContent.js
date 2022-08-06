@@ -18,11 +18,12 @@ const ButtonRow = () => {
   );
 };
 const TodoContent = () => {
-  const { todoData } = useContext(TodoContext);
-
+  const { todoData, getMostRecentData } = useContext(TodoContext);
+  console.log(getMostRecentData());
   return (
     <div>
       <ButtonRow />
+      <h2>Recent Notes</h2>
       {todoData.map((value) => {
         return <TodoItem todoItem={value} key={value.id} />;
       })}

@@ -6,6 +6,9 @@ function useTodo() {
   useEffect(() => {
     GetData();
   }, []);
+  function getMostRecentData() {
+    
+  }
 
   //get the data from json
   async function GetData() {
@@ -58,6 +61,7 @@ function useTodo() {
     todoData,
     deleteData,
     updateData,
+    getMostRecentData,
   };
 }
 

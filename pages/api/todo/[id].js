@@ -29,9 +29,9 @@ export default async function handler(req, res) {
     const time = today.toLocaleTimeString("en-US");
 
     if (operation == "update") {
-      return ` Updated At: ${date} Time :${time}`;
+      return `Updated At: ${date} Time :${time}`;
     }
-    return ` Created At: ${date} Time :${time}`;
+    return `Created At: ${date} Time :${time}`;
   }
   async function postMethod() {
     const readFileData = await readFile(jsonFile);
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
           return idCurrent > accumulator ? idCurrent : accumulator;
         }, 0) + 1;
       const newToDo = { ...recordFromBody, id: idNew, Date: getDate() };
-      const newTodoList = [...todo, newToDo];
+      const newTodoList = [newToDo,...todo ];
       writeFile(jsonFile, JSON.stringify(newTodoList, null, 2));
       res.setHeader("Content-Type", "application/json");
       res.status(200).send(JSON.stringify(todo, null, 2));

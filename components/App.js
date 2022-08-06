@@ -8,7 +8,7 @@ function AppNoProvider() {
   return (
     <>
       <Toolbar />
-      <div className={theme == "light" ? "wrapper" : "wrapper-dark"}>
+      <div className={`wrapper ${theme}`}>
         <div className="container">
           <SaveMenu />
           <TodoContent />

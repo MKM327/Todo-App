@@ -4,7 +4,8 @@ import useMenu from "../Hooks/useMenu";
 import useTheme from "../Hooks/useTheme";
 const TodoContext = createContext();
 function TodoProvider({ children }) {
-  const { addData, todoData, deleteData, updateData } = useTodo();
+  const { addData, todoData, deleteData, updateData, getMostRecentData } =
+    useTodo();
   const { theme, setTheme } = useTheme();
   const { menuState, setMenuState } = useMenu();
 
@@ -19,6 +20,7 @@ function TodoProvider({ children }) {
         updateData,
         menuState,
         setMenuState,
+        getMostRecentData,
       }}
     >
       {children}

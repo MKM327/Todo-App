@@ -6,12 +6,15 @@ import NoteDescription from "./NoteDescription";
 import { MenuProvider } from "../../Contexts/MenuContext";
 import useNote from "../../Hooks/useNote";
 import axios from "axios";
+import TodoContent from "../To do items/TodoContent";
+import { TodoContext } from "../../Contexts/TodoContext";
 const NotePage = ({ data }) => {
   const { filteredData, loading } = useNote(data);
+  const { theme } = useContext(TodoContext);
   return (
     <MenuProvider data={filteredData}>
       <Toolbar />
-      <div className="note-container">
+      <div className={`note-container ${theme}`}>
         <div className="note-wrapper">
           <SaveMenu />
           <NoteButtons filteredData={filteredData} />
