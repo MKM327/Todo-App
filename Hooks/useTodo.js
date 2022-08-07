@@ -23,6 +23,7 @@ function useTodo() {
       data: {
         Header: header,
         Description: description,
+        Finished: false,
       },
     };
     await axios(options);
@@ -37,7 +38,7 @@ function useTodo() {
   //Update the data from json
 
   const updateData = async (id, header, description, finished) => {
-    console.log(finished);
+    debugger;
     const options = {
       url: `${apiRoot}/${id}`,
       method: "PUT",

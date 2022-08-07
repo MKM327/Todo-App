@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { MenuContext } from "../../Contexts/MenuContext";
 import { TodoContext } from "../../Contexts/TodoContext";
 const NoteDescription = ({ data, finished, setFinished }) => {
   const { updateData } = useContext(TodoContext);
@@ -16,10 +15,10 @@ const NoteDescription = ({ data, finished, setFinished }) => {
           name="isDone"
           id=""
           className="note-checkbox"
-          checked={finished}
+          checked={data.Finished}
           onChange={() => {
-            setFinished(!finished);
-            updateData(data.id, data.Header, data.Description, finished);
+            data.Finished = !data.Finished;
+            updateData(data.id, data.Header, data.Description, data.Finished);
           }}
         />
         <label htmlFor="isDone">Mark as Finished</label>

@@ -84,3 +84,6 @@
 .toolbar-header{
     cursor: pointer;
 }
+.toolbar-search-result{
+    text-decoration:line-through;
+}

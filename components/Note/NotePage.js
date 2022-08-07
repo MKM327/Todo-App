@@ -29,7 +29,6 @@ const NotePage = ({ data }) => {
             ) : (
               <NoteDescription
                 data={filteredData}
-                finished={finished}
                 setFinished={setFinished}
               />
             )}

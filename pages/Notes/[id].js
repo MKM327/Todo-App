@@ -1,5 +1,4 @@
 import NotePage from "../../components/Note/NotePage";
-import useNote from "../../Hooks/useNote";
 import axios from "axios";
 export default function TodoPage({ data }) {
   return <NotePage data={data} />;
