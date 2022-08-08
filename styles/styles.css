@@ -118,3 +118,12 @@ button:hover {
     padding: 5px;
     border: 1px solid black 
 }
+.todo-item-desc{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.todo-item-desc:hover{
+    cursor: pointer;
+    background-color: gray;
+}
