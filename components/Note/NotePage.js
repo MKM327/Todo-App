@@ -9,7 +9,8 @@ import axios from "axios";
 import TodoContent from "../To do items/TodoContent";
 import { TodoContext } from "../../Contexts/TodoContext";
 const NotePage = ({ data }) => {
-  const { filteredData, loading, finished, setFinished } = useNote(data);
+  
+  const { filteredData, loading, setFinished } = useNote(data);
   const { theme } = useContext(TodoContext);
   return (
     <MenuProvider data={filteredData}>
@@ -27,10 +28,7 @@ const NotePage = ({ data }) => {
                 <div></div>
               </div>
             ) : (
-              <NoteDescription
-                data={filteredData}
-                setFinished={setFinished}
-              />
+              <NoteDescription data={filteredData} setFinished={setFinished} />
             )}
           </div>
         </div>

@@ -26,7 +26,7 @@ const usePage = (todoData) => {
   const todoPerPage = () => {
     return todoData.map((item, index) => {
       if (index >= (currentPage - 1) * 3 && index < currentPage * 3) {
-        return <TodoItem key={index} todoItem={item} />;
+        return <TodoItem key={item.id} todoItem={item} />;
       }
     });
   };

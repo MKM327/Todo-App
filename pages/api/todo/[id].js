@@ -23,16 +23,7 @@ export default async function handler(req, res) {
       res.status(501).send(`Method ${method} not implemented`);
       console.log(`Method ${method} not implemented`);
   }
-  function getDate(operation) {
-    var today = new Date();
-    const date = today.toLocaleDateString("en-US");
-    const time = today.toLocaleTimeString("en-US");
 
-    if (operation == "update") {
-      return `Updated At: ${date} Time :${time}`;
-    }
-    return `Created At: ${date} Time :${time}`;
-  }
   async function postMethod() {
     const readFileData = await readFile(jsonFile);
     const todo = JSON.parse(readFileData);

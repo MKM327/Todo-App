@@ -6,23 +6,43 @@ import {
   collection,
   getFirestore,
   getDoc,
-  setDoc,
   getDocs,
   updateDoc,
+  setDoc,
 } from "firebase/firestore";
-function InitFirebase() {
+import { useEffect, useState } from "react";
+function useFirebase() {
+  const [todoData, setodoData] = useState([]);
+  useEffect(() => {
+    getAllData();
+  }, []);
+  function getDate(operation) {
+    var today = new Date();
+    const date = today.toLocaleDateString("en-US");
+    const time = today.toLocaleTimeString("en-US");
+
+    if (operation == "update") {
+      return `Updated At: ${date} Time :${time}`;
+    }
+    return `Created At: ${date} Time :${time}`;
+  }
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   async function addData(header, description) {
     try {
-      const addedData = await addDoc(collection(db, "Todo"), {
+      const usersRef = collection(db, "Todo");
+      const userRef = doc(usersRef);
+      const id = userRef.id;
+      const ref = await setDoc(userRef, {
         Header: header,
         Description: description,
         Finished: false,
-        Date: new Date(),
+        id: id,
+        Date: getDate("create"),
       });
-      console.log(addedData.id);
+      console.log("Added");
+      getAllData();
     } catch (error) {
       console.log(error);
     }
@@ -34,7 +54,7 @@ function InitFirebase() {
       const data = documentSnapshot.data();
       return data;
     } catch (error) {
-      console.log(error);
+      console.log("Error: ", error);
     }
   }
 
@@ -43,7 +63,7 @@ function InitFirebase() {
       const docRef = collection(db, "Todo");
       const documentSnapshot = await getDocs(docRef);
       const data = documentSnapshot.docs.map((doc) => doc.data());
-      return data;
+      setodoData(data);
     } catch (error) {
       console.log(error);
     }
@@ -69,6 +89,13 @@ function InitFirebase() {
       console.log(error);
     }
   }
-  return { getDataWithId, addData, getAllData, deleteData, updateData };
+  return {
+    todoData,
+    getDataWithId,
+    addData,
+    getAllData,
+    deleteData,
+    updateData,
+  };
 }
-export default InitFirebase;
+export default useFirebase;

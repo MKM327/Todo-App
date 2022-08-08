@@ -3,11 +3,9 @@ import { TodoContext } from "../../Contexts/TodoContext";
 import TodoItem from "./TodoItem";
 import { MenuContext } from "../../Contexts/MenuContext";
 import usePage from "../../Hooks/usePage";
-import InitFirebase from "../../Hooks/FirebaseDB";
 
 const ButtonRow = () => {
   const { setMenuState, setMenuMode } = useContext(MenuContext);
-  const { addData, getAllData, deleteData, updateData } = InitFirebase();
   return (
     <div className="button-row">
       <button
