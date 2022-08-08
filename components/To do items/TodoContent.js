@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TodoContext } from "../../Contexts/TodoContext";
 import TodoItem from "./TodoItem";
 import { MenuContext } from "../../Contexts/MenuContext";
@@ -19,14 +19,18 @@ const ButtonRow = () => {
 };
 const TodoContent = () => {
   const { todoData } = useContext(TodoContext);
+
+  const [page, setPage] = useState(1);
   return (
     <div>
       <ButtonRow />
-      <h2>Recent Notes</h2>
+      <h2>All Notes</h2>
 
-      {todoData.slice(0, 3).map((todoItem) => {
-        return <TodoItem todoItem={todoItem} />;
-      })}
+      <div className="all-todo">
+        {todoData.map((todoItem) => {
+          return <TodoItem todoItem={todoItem} />;
+        })}
+      </div>
     </div>
   );
 };

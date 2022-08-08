@@ -87,10 +87,3 @@
 .toolbar-search-result{
     text-decoration:line-through;
 }
-.toolbar-header{
-    display: flex;
-    gap:5em;
-    align-items: center;
-    justify-content: space-between;
-    
-}

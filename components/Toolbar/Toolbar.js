@@ -9,9 +9,6 @@ const NavigationHeaders = () => {
       <Link href={"/"}>
         <h3 className="toolbar-header">To do App</h3>
       </Link>
-      <Link href={"Notes"}>
-        <h3 className="toolbar-header">All Notes</h3>
-      </Link>
     </div>
   );
 };
