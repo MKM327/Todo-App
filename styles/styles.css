@@ -108,3 +108,13 @@ button:hover {
     display: flex;
     justify-content: center;
 }
+.page-row{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.page-num{
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid black 
+}
