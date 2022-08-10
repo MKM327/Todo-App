@@ -1,12 +1,17 @@
 import { createContext } from "react";
-import useTodo from "../Hooks/useTodo";
 import useMenu from "../Hooks/useMenu";
 import useTheme from "../Hooks/useTheme";
 import useFirebase from "../Hooks/useFirebase";
 const TodoContext = createContext();
 function TodoProvider({ children }) {
-  const { updateData, deleteData, getDataWithId } = useTodo();
-  const { todoData,addData } = useFirebase();
+  const {
+    todoData,
+    addData,
+    getDataWithId,
+    updateData,
+    deleteData,
+    getAllData,
+  } = useFirebase();
   const { theme, setTheme } = useTheme();
   const { menuState, setMenuState } = useMenu();
 
@@ -21,6 +26,8 @@ function TodoProvider({ children }) {
         updateData,
         menuState,
         setMenuState,
+        getDataWithId,
+        getAllData,
       }}
     >
       {children}

@@ -3,14 +3,17 @@ import { useContext } from "react";
 import { MenuContext } from "../../Contexts/MenuContext";
 import { TodoContext } from "../../Contexts/TodoContext";
 const NoteButtons = ({ filteredData }) => {
-  const { setMenuState,setMenuMode } = useContext(MenuContext);
-  const { deleteData } = useContext(TodoContext);
+  const { setMenuState, setMenuMode } = useContext(MenuContext);
+  const { deleteData, getAllData } = useContext(TodoContext);
   return (
     <div className="button-wrapper">
-      <button className="edit-btn" onClick={() =>{ 
-        setMenuState()
-        setMenuMode("update")
-        }}>
+      <button
+        className="edit-btn"
+        onClick={() => {
+          setMenuState();
+          setMenuMode("update");
+        }}
+      >
         Edit
       </button>
       <Link href={"/"}>
@@ -18,6 +21,7 @@ const NoteButtons = ({ filteredData }) => {
           className="edit-btn"
           onClick={() => {
             deleteData(filteredData.id);
+            getAllData();
           }}
         >
           Delete

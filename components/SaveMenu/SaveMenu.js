@@ -12,7 +12,7 @@ const SaveTodoButton = () => {
         className="input-btn save-menu-btn"
         onClick={() => {
           menuModeBool
-            ? updateData(data.id, header, description)
+            ? updateData(data.id, header, description, data.Finished)
             : addData(header, description);
         }}
       >
