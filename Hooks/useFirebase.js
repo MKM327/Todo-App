@@ -16,7 +16,15 @@ function useFirebase() {
   useEffect(() => {
     getAllData();
   }, []);
-
+  const firebaseConfig = {
+    apiKey: "AIzaSyAL_RFwBEoGGSVExYWQHipvk277tuOmJ7w",
+    authDomain: "to-do-app-ffd4c.firebaseapp.com",
+    projectId: "to-do-app-ffd4c",
+    storageBucket: "to-do-app-ffd4c.appspot.com",
+    messagingSenderId: "708107399508",
+    appId: "1:708107399508:web:1d8fc4448f850779fc18c1",
+    measurementId: "G-NVQS167S5L",
+  };
   function getDate(operation) {
     var today = new Date();
     const date = today.toLocaleDateString("en-US");
